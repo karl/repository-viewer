@@ -64,11 +64,11 @@
   <script>
 
     $.ajax({
-      url: "https://api.github.com/users/karl/repos"
-    }).then(function(repos) {
-      // console.log(repos);
+      url: "https://api.github.com/search/repositories?q=user:karl&sort=stars&order=desc"
+    }).then(function(results) {
+      // console.log(results);
       var html = [];
-      $.each(repos, function(index, repo) {
+      $.each(results.items, function(index, repo) {
         html = html.concat([
           '<tr>',
             '<td>' + repo.name + '</td>',
