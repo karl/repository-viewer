@@ -53,23 +53,39 @@
 
   <div class="container">
 
-    <table class="table">
+    <table class="table" id="repos">
       <tr>
-        <td>Repository Title</td>
-        <td><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 20</td>
-        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 2</td>
-        <td><span class="glyphicon glyphicon-random" aria-hidden="true"></span> 9000</td>
-      </tr>
-      <tr>
-        <td>Repository Title</td>
-        <td><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 20</td>
-        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 2</td>
-        <td><span class="glyphicon glyphicon-random" aria-hidden="true"></span> 9000</td>
+        <td>Loading...</td>
       </tr>
     </table>
 
   </div>
 
+  <script>
+
+    $.ajax({
+      url: "https://api.github.com/users/karl/repos"
+    }).then(function(repos) {
+      // console.log(repos);
+      var html = [];
+      $.each(repos, function(index, repo) {
+        html = html.concat([
+          '<tr>',
+            '<td>' + repo.name + '</td>',
+            '<td><span class="glyphicon glyphicon-star" aria-hidden="true"></span> ' + repo.stargazers_count + '</td>',
+            '<td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + repo.watchers_count + '</td>',
+            '<td><span class="glyphicon glyphicon-random" aria-hidden="true"></span> ' + repo.forks_count + '</td>',
+          '</tr>'
+        ]);
+      });
+
+      $("#repos").html(html.join());
+
+    }, function(err) {
+      console.log("error", err);
+    });
+
+  </script>
 
 </body>
 </html>
