@@ -42,4 +42,4 @@ This will start a simple http server on port `8080`.
 
 ### View
 
-Open http://localhost:8080/
+Open [http://localhost:8080/](http://localhost:8080/)
