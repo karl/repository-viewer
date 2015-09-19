@@ -1,7 +1,7 @@
 <div>
 
   <h2>{{repository.name}}</h2>
-  <p>Last updated {{repository.updated_at}}</p>
+  <p>Last updated {{repository.updated_at | date}}</p>
 
   <p>
     <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{repository.stargazers_count}}
