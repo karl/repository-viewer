@@ -1,3 +1,5 @@
+require './index.less'
+
 repos = []
 
 $.ajax
