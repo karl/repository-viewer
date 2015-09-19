@@ -15,11 +15,15 @@ angular.module('app').directive 'app', ['repositoryService', (repositoryService)
     scope.select = (repository) ->
       scope.currentRepository = repository
 
-    repositoryService.getAll()
+    scope.loading = true
+
+    repositoryService.getAllForUser 'karl'
       .then (repositories) ->
         scope.repositories = repositories
+        scope.loading = false
 
       .catch ->
-        console.log 'Error loading repositories!'
+        scope.loading = false
+        scope.error = true
 
 ]
