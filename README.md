@@ -2,6 +2,12 @@
 
 A very simple GitHub repository Viewer
 
+## Demo
+
+You can see a demo of the Repository Viewer here:
+
+http://karl.github.io/repository-viewer/
+
 ## Getting Started
 
 ### Install Node.js
