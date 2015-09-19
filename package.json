@@ -27,6 +27,7 @@
     "coffeelint-loader": "0.1.1",
     "css-loader": "0.18.0",
     "extract-text-webpack-plugin": "0.8.2",
+    "html-loader": "0.3.0",
     "http-server": "0.8.0",
     "less": "2.5.1",
     "less-loader": "2.2.1",

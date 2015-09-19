@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
   <title>Repository Viewer</title>
 
@@ -17,76 +17,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/index.js"></script>
 
 </head>
 <body>
 
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <!-- <img src="images/GitHub-Mark-32px.png"> -->
-          Repository Viewer
-        </a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username">
-          </div>
-          <button type="submit" class="btn btn-default">Show</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <p class="navbar-text">Karl O'Keeffe</p>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <table class="table" id="repos">
-      <tr>
-        <td>Loading...</td>
-      </tr>
-    </table>
-
-    <div id="details">
-
-      <h2>Repository Title</h2>
-      <p>Last updated 7 days ago</p>
-
-      <p>
-        <td><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 20
-        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 20
-        <td><span class="glyphicon glyphicon-random" aria-hidden="true"></span> 9000
-      </p>
-
-      <p>
-        Description
-      </p>
-
-      <p>
-        Stats
-      </p>
-
-      <a href="#" class="back">Back to list</a>
-
-    </div>
-
-  </div>
-
-  <script src="assets/index.js"></script>
+  <app></app>
 
 </body>
 </html>

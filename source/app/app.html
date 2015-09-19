@@ -1,0 +1,15 @@
+<div>
+
+  <app-header></app-header>
+
+  <div class="container">
+
+    <app-repository-list repositories="repositories" ng-hide="!!currentRepository" repository-click="select(repository)"></app-repository-list>
+
+    <app-details ng-show="!!currentRepository" repository="currentRepository" back="select(null)"></app-details>
+
+    <!-- <pre>{{repositories | json}}</pre> -->
+
+  </div>
+
+</div>
