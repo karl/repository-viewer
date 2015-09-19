@@ -13,7 +13,7 @@
         '<tr data-index="' + index + '">',
           '<td>' + repo.name + '</td>',
           '<td><span class="glyphicon glyphicon-star" aria-hidden="true"></span> ' + repo.stargazers_count + '</td>',
-          '<td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + repo.watchers_count + '</td>',
+          '<td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + repo.subscribers_count + '</td>',
           '<td><span class="glyphicon glyphicon-random" aria-hidden="true"></span> ' + repo.forks_count + '</td>',
         '</tr>'
       ]);
