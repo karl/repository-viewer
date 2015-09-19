@@ -13,7 +13,9 @@ http://karl.github.io/repository-viewer/
 ### Install Node.js
 
 You will need `node.js` and `npm`.
-If you don't already have them you can install them from https://nodejs.org/en/
+If you don't already have them you can install them from:
+
+https://nodejs.org/en/
 
 ### Install prerequisites
 
