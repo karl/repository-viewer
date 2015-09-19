@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "build-dev": "webpack --debug --devtool source-map --output-pathinfo --watch",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "./deploy.sh"
   },
   "repository": {
     "type": "git",
