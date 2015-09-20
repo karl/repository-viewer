@@ -6,6 +6,7 @@ require '../repository-list/repository-list'
 require '../details/details'
 require '../repository-service/repository-service'
 
+require './app.less'
 angular.module('app').directive 'app', ['repositoryService', (repositoryService) ->
   restrict: 'E'
   template: require './app.html'

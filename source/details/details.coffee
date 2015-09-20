@@ -1,6 +1,7 @@
 require '../module/module'
 angular = require 'angular'
 
+require './details.less'
 angular.module('app').directive 'appDetails', ->
   restrict: 'E'
   template: require './details.html'
