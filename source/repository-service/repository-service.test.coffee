@@ -1,7 +1,29 @@
 assert = require 'assert'
+_ = require 'lodash'
+Promise = require 'bluebird'
+RepositoryService = require './repository-service.coffee'
 
-describe 'Array', ->
-  describe '#indexOf()', ->
-    it 'should return -1 when the value is not present', ->
-      assert.equal -1, [1, 2, 3].indexOf 5
-      assert.equal -1, [1, 2, 3].indexOf 0
+describe 'RepositoryService', ->
+  describe 'getAllForUser', ->
+    it 'should return repositories with subcribers_count', ->
+
+      repositories = [{
+        name: 'test-repository'
+      }]
+
+      fullRepository =
+        name: 'test-repository'
+        subcribers_count: 1
+
+      mockHttp =
+        get: (url) ->
+          if _.startsWith url, 'https://api.github.com/search/'
+            Promise.resolve data:
+              items: repositories
+          else
+            Promise.resolve data: fullRepository
+
+      repositoryService = new RepositoryService(mockHttp)
+      repositoryService.getAllForUser 'testuser'
+        .then (repositories) ->
+          assert.equal 1, repositories[0].subcribers_count
