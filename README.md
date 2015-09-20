@@ -23,6 +23,14 @@ https://nodejs.org/en/
 npm install
 ```
 
+### Unit Test
+
+```
+npm test
+```
+
+You can run `npm run test-dev` to automatically run tests whenever a file changes.
+
 ### Build
 
 ```
