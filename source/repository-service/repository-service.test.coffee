@@ -5,6 +5,7 @@ RepositoryService = require './repository-service.coffee'
 
 describe 'RepositoryService', ->
   describe 'getAllForUser', ->
+
     it 'should return repositories with subcribers_count', ->
 
       repositories = [{
@@ -27,3 +28,24 @@ describe 'RepositoryService', ->
       repositoryService.getAllForUser 'testuser'
         .then (repositories) ->
           assert.equal 1, repositories[0].subcribers_count
+
+    it 'should fail if a single repository request fails', ->
+
+      repositories = [{
+        name: 'test-repository'
+      }, {
+        name: 'test-repository-2'
+      } ]
+
+      mockHttp =
+        get: (url) ->
+          if _.startsWith url, 'https://api.github.com/search/'
+            Promise.resolve data:
+              items: repositories
+          else
+            Promise.reject data: {}
+
+      repositoryService = new RepositoryService(mockHttp)
+      repositoryService.getAllForUser 'testuser'
+        .catch ->
+          assert.ok(true)
