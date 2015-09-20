@@ -47,11 +47,42 @@
   \*****************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! ./app/app */ 1);
+	__webpack_require__(/*! bootstrap/dist/css/bootstrap.css */ 1);
+	
+	__webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.css */ 10);
+	
+	__webpack_require__(/*! ./app/app */ 12);
 
 
 /***/ },
 /* 1 */
+/*!********************************************!*\
+  !*** ./~/bootstrap/dist/css/bootstrap.css ***!
+  \********************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/*!**************************************************!*\
+  !*** ./~/bootstrap/dist/css/bootstrap-theme.css ***!
+  \**************************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 11 */,
+/* 12 */
 /*!*******************************!*\
   !*** ./source/app/app.coffee ***!
   \*******************************/
@@ -59,23 +90,25 @@
 
 	var angular;
 	
-	__webpack_require__(/*! ../module/module */ 2);
+	__webpack_require__(/*! ../module/module */ 13);
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
 	
-	__webpack_require__(/*! ../header/header */ 5);
+	__webpack_require__(/*! ../header/header */ 16);
 	
-	__webpack_require__(/*! ../repository-list/repository-list */ 7);
+	__webpack_require__(/*! ../repository-list/repository-list */ 18);
 	
-	__webpack_require__(/*! ../details/details */ 9);
+	__webpack_require__(/*! ../details/details */ 20);
 	
-	__webpack_require__(/*! ../repository-service/repository-service */ 11);
+	__webpack_require__(/*! ../repository-service/repository-service */ 22);
+	
+	__webpack_require__(/*! ./app.less */ 31);
 	
 	angular.module('app').directive('app', [
 	  'repositoryService', function(repositoryService) {
 	    return {
 	      restrict: 'E',
-	      template: __webpack_require__(/*! ./app.html */ 12),
+	      template: __webpack_require__(/*! ./app.html */ 26),
 	      scope: {},
 	      link: function(scope, element, attrs) {
 	        scope.select = function(repository) {
@@ -96,7 +129,7 @@
 
 
 /***/ },
-/* 2 */
+/* 13 */
 /*!*************************************!*\
   !*** ./source/module/module.coffee ***!
   \*************************************/
@@ -104,24 +137,24 @@
 
 	var angular;
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
 	
 	angular.module('app', []);
 
 
 /***/ },
-/* 3 */
+/* 14 */
 /*!****************************!*\
   !*** ./~/angular/index.js ***!
   \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! ./angular */ 4);
+	__webpack_require__(/*! ./angular */ 15);
 	module.exports = angular;
 
 
 /***/ },
-/* 4 */
+/* 15 */
 /*!******************************!*\
   !*** ./~/angular/angular.js ***!
   \******************************/
@@ -28955,7 +28988,7 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 5 */
+/* 16 */
 /*!*************************************!*\
   !*** ./source/header/header.coffee ***!
   \*************************************/
@@ -28963,30 +28996,30 @@
 
 	var angular;
 	
-	__webpack_require__(/*! ../module/module */ 2);
+	__webpack_require__(/*! ../module/module */ 13);
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
 	
 	angular.module('app').directive('appHeader', function() {
 	  return {
 	    restrict: 'E',
-	    template: __webpack_require__(/*! ./header.html */ 6),
+	    template: __webpack_require__(/*! ./header.html */ 17),
 	    scope: {}
 	  };
 	});
 
 
 /***/ },
-/* 6 */
+/* 17 */
 /*!***********************************!*\
   !*** ./source/header/header.html ***!
   \***********************************/
 /***/ function(module, exports) {
 
-	module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <!-- <img src=\"images/GitHub-Mark-32px.png\"> -->\n        Repository Viewer\n      </a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-right\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n      <form class=\"navbar-form navbar-left\" role=\"search\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\">\n        </div>\n        <button type=\"submit\" class=\"btn btn-default\">Show</button>\n      </form>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <p class=\"navbar-text\">Karl O'Keeffe</p>\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </div>\n</nav>\n";
+	module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">\n        <!-- <img src=\"images/GitHub-Mark-32px.png\"> -->\n        Repository Viewer\n      </a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse navbar-right\" id=\"bs-example-navbar-collapse-1\">\n      <!-- <form class=\"navbar-form navbar-left\" role=\"search\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\">\n        </div>\n        <button type=\"submit\" class=\"btn btn-default\">Show</button>\n      </form> -->\n      <ul class=\"nav navbar-nav navbar-right\">\n        <p class=\"navbar-text\">Karl O'Keeffe</p>\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </div>\n</nav>\n";
 
 /***/ },
-/* 7 */
+/* 18 */
 /*!*******************************************************!*\
   !*** ./source/repository-list/repository-list.coffee ***!
   \*******************************************************/
@@ -28994,14 +29027,16 @@
 
 	var angular;
 	
-	__webpack_require__(/*! ../module/module */ 2);
+	__webpack_require__(/*! ../module/module */ 13);
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
+	
+	__webpack_require__(/*! ./repository-list.less */ 27);
 	
 	angular.module('app').directive('appRepositoryList', function() {
 	  return {
 	    restrict: 'E',
-	    template: __webpack_require__(/*! ./repository-list.html */ 8),
+	    template: __webpack_require__(/*! ./repository-list.html */ 19),
 	    scope: {
 	      repositories: '=',
 	      repositoryClick: '&'
@@ -29018,16 +29053,16 @@
 
 
 /***/ },
-/* 8 */
+/* 19 */
 /*!*****************************************************!*\
   !*** ./source/repository-list/repository-list.html ***!
   \*****************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "<table class=\"table\" id=\"repos\">\n  <tr ng-repeat=\"repository in repositories\" ng-click=\"clicked(repository)\">\n    <td>{{repository.name}}</td>\n    <td><span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> {{repository.stargazers_count}}</td>\n    <td><span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span> {{repository.subscribers_count}}</td>\n    <td><span class=\"glyphicon glyphicon-random\" aria-hidden=\"true\"></span> {{repository.forks_count}}</td>\n  </tr>\n</table>\n";
+	module.exports = "<table class=\"repository-list table\">\n  <tr ng-repeat=\"repository in repositories\" ng-click=\"clicked(repository)\">\n    <th><a href=\"\">{{repository.name}}</a></th>\n    <td><span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> {{repository.stargazers_count}}</td>\n    <td><span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span> {{repository.subscribers_count}}</td>\n    <td><span class=\"glyphicon glyphicon-random\" aria-hidden=\"true\"></span> {{repository.forks_count}}</td>\n  </tr>\n</table>\n";
 
 /***/ },
-/* 9 */
+/* 20 */
 /*!***************************************!*\
   !*** ./source/details/details.coffee ***!
   \***************************************/
@@ -29035,14 +29070,16 @@
 
 	var angular;
 	
-	__webpack_require__(/*! ../module/module */ 2);
+	__webpack_require__(/*! ../module/module */ 13);
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
+	
+	__webpack_require__(/*! ./details.less */ 29);
 	
 	angular.module('app').directive('appDetails', function() {
 	  return {
 	    restrict: 'E',
-	    template: __webpack_require__(/*! ./details.html */ 10),
+	    template: __webpack_require__(/*! ./details.html */ 21),
 	    scope: {
 	      repository: '=',
 	      back: '&'
@@ -29052,16 +29089,16 @@
 
 
 /***/ },
-/* 10 */
+/* 21 */
 /*!*************************************!*\
   !*** ./source/details/details.html ***!
   \*************************************/
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n\n  <h2>{{repository.name}}</h2>\n  <p>Last updated {{repository.updated_at}}</p>\n\n  <p>\n    <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> {{repository.stargazers_count}}\n    |\n    <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span> {{repository.subscribers_count}}\n    |\n    <span class=\"glyphicon glyphicon-random\" aria-hidden=\"true\"></span> {{repository.forks_count}}\n  </p>\n\n  <p>\n    {{repository.description}}\n  </p>\n\n  <a href=\"\" ng-click=\"back()\">Back to list</a>\n\n</div>\n";
+	module.exports = "<div class=\"details\">\n\n  <div class=\"header\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <h2>{{repository.name}}</h2>\n      </div>\n      <div class=\"col-md-3 updated-date\">\n        Last updated {{repository.updated_at | date}}\n      </div>\n      <div class=\"col-md-3 counts\">\n        <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> {{repository.stargazers_count}}\n        <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span> {{repository.subscribers_count}}\n        <span class=\"glyphicon glyphicon-random\" aria-hidden=\"true\"></span> {{repository.forks_count}}\n      </div>\n    </div>\n  </div>\n\n  <p class=\"text-muted\">\n    {{repository.description}}\n  </p>\n\n  <a href=\"\" ng-click=\"back()\">Back to list</a>\n\n</div>\n";
 
 /***/ },
-/* 11 */
+/* 22 */
 /*!*************************************************************!*\
   !*** ./source/repository-service/repository-service.coffee ***!
   \*************************************************************/
@@ -29069,11 +29106,11 @@
 
 	var Promise, RepositoryService, angular;
 	
-	__webpack_require__(/*! ../module/module */ 2);
+	__webpack_require__(/*! ../module/module */ 13);
 	
-	angular = __webpack_require__(/*! angular */ 3);
+	angular = __webpack_require__(/*! angular */ 14);
 	
-	Promise = __webpack_require__(/*! bluebird */ 13);
+	Promise = __webpack_require__(/*! bluebird */ 23);
 	
 	module.exports = RepositoryService = (function() {
 	  function RepositoryService($http1) {
@@ -29109,16 +29146,7 @@
 
 
 /***/ },
-/* 12 */
-/*!*****************************!*\
-  !*** ./source/app/app.html ***!
-  \*****************************/
-/***/ function(module, exports) {
-
-	module.exports = "<div>\n\n  <app-header></app-header>\n\n  <div class=\"container\">\n\n    <p class=\"text-muted\" ng-show=\"loading\">\n      Loading...\n    </p>\n\n    <app-repository-list repositories=\"repositories\" ng-hide=\"!!currentRepository\" repository-click=\"select(repository)\"></app-repository-list>\n\n    <app-details ng-show=\"!!currentRepository\" repository=\"currentRepository\" back=\"select(null)\"></app-details>\n\n    <div class=\"alert alert-danger\" role=\"alert\" ng-show=\"error\">\n      <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Error:</span>\n      Unable to load repositories\n    </div>\n\n  </div>\n\n</div>\n";
-
-/***/ },
-/* 13 */
+/* 23 */
 /*!*******************************************!*\
   !*** ./~/bluebird/js/browser/bluebird.js ***!
   \*******************************************/
@@ -34000,10 +34028,10 @@
 	
 	},{"./es5.js":14}]},{},[4])(4)
 	});                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/process/browser.js */ 14), (function() { return this; }()), __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 15).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/process/browser.js */ 24), (function() { return this; }()), __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 25).setImmediate))
 
 /***/ },
-/* 14 */
+/* 24 */
 /*!**********************************************************!*\
   !*** (webpack)/~/node-libs-browser/~/process/browser.js ***!
   \**********************************************************/
@@ -34103,13 +34131,13 @@
 
 
 /***/ },
-/* 15 */
+/* 25 */
 /*!*****************************************************************!*\
   !*** (webpack)/~/node-libs-browser/~/timers-browserify/main.js ***!
   \*****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(/*! process/browser.js */ 14).nextTick;
+	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(/*! process/browser.js */ 24).nextTick;
 	var apply = Function.prototype.apply;
 	var slice = Array.prototype.slice;
 	var immediateIds = {};
@@ -34185,7 +34213,45 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 15).setImmediate, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 15).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 25).setImmediate, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/timers-browserify/main.js */ 25).clearImmediate))
+
+/***/ },
+/* 26 */
+/*!*****************************!*\
+  !*** ./source/app/app.html ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"app\">\n\n  <app-header></app-header>\n\n  <div class=\"container app-body\">\n\n    <p class=\"text-muted text-center\" ng-show=\"loading\">\n      Loading...\n    </p>\n\n    <app-repository-list repositories=\"repositories\" ng-hide=\"!!currentRepository\" repository-click=\"select(repository)\"></app-repository-list>\n\n    <app-details ng-show=\"!!currentRepository\" repository=\"currentRepository\" back=\"select(null)\"></app-details>\n\n    <div class=\"alert alert-danger\" role=\"alert\" ng-show=\"error\">\n      <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Error:</span>\n      Unable to load repositories\n    </div>\n\n  </div>\n\n</div>\n";
+
+/***/ },
+/* 27 */
+/*!*****************************************************!*\
+  !*** ./source/repository-list/repository-list.less ***!
+  \*****************************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 28 */,
+/* 29 */
+/*!*************************************!*\
+  !*** ./source/details/details.less ***!
+  \*************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 30 */,
+/* 31 */
+/*!*****************************!*\
+  !*** ./source/app/app.less ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
